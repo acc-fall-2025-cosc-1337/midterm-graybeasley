@@ -10,3 +10,11 @@ TEST_CASE("test")
 {
 	REQUIRE(test_config() == true);
 }
+
+TEST_CASE("Test get_dna_p_distance function", "DNA") {
+    //Test A
+    REQUIRE(get_dna_p_distance("GAGCCTACTAACGGGAT", "CATCGTAATGACGGCCT") == Approx(0.4118).margin(0.0001));
+
+    //Test B
+    REQUIRE(get_dna_p_distance("GAGCCTACTAACGGGAT", "GATCGTAATGACGGCCT") == Approx(0.3529).margin(0.0001));
+}
